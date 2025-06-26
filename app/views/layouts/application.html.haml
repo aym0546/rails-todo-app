@@ -15,6 +15,14 @@
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
     = javascript_include_tag "application", "data-turbo-track": "reload", type: "module"
   %body
+    - if user_signed_in?
+      .dropdown
+        %span.dropbtn.header_avatar= "#{current_user.email} ▼"
+        .dropdown-content
+          %a{:href => "#"} プロフィール
+          = link_to 'ログアウト', destroy_user_session_path, data: { method: 'delete' }
+    - else
+      = link_to 'ログイン', new_user_session_path, class: 'header_loginBtn'
     %p.notice= notice
     %p.alert= alert
     = yield
