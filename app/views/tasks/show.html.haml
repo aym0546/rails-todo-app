@@ -1,0 +1,31 @@
+.container
+  .card
+    .task_detail
+      .task_detail_header
+        %h2= @task.title
+        - if user_signed_in? && current_user == @task.user
+          .dropdown
+            = image_tag 'dot.png', class: 'dropbtn'
+            .dropdown_content
+              = link_to 'Edit', edit_task_path(@task)
+              = link_to 'Delete', task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+
+      .eyecatch
+        = image_tag 'eyecatch.png'
+      .task_detail_content
+        %p
+          それもほかはなはだそんな乱暴らに対する方の所でありたない。よく十月が相談論もついにその享有まいななどになるていですがは講演仕ななかって、だんだんにはしでしないますで。受売へしない事はまあ結果と何しろですですなけれ。同時に岡田君を返事爺さんそう公言にいうながたこの材料あなたか誘惑にという皆お話だうませでば、この昔はこれか権力幾分をしから、岡田さんのものが機会の私をもうお授業と知れが皆左にご養成でしようにもしご切望がなるですたて、同じくどうも話で潜んないからいますのに行っんた。
+      .task_detail_comment
+        %h3 Comment
+      .task_detail_comments
+        .task_detail_comments_img
+          = image_tag 'face.png'
+        .task_detail_comments_content
+          %p Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc
+      .task_detail_comments
+        .task_detail_comments_img
+          = image_tag 'face2.png'
+        .task_detail_comments_content
+          %p Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc
+
+    %p.new_comment + Add new comment

@@ -3,35 +3,20 @@
     .card_header
       %h2= @board.title
     .card_body
-      .task
-        .eyecatch
-          = image_tag 'eyecatch.png'
-        .task_header
-          %h5 タイトル
-        .task_content
-          %p
-            それもほかはなはだそんな乱暴らに対する方の所でありたない。よく十月が相談論もついにその享有まいななどになるていですがは講演仕ななかって、だんだんにはしでしないますで。受売へしない事はまあ結果と何しろですですなけれ。同時に岡田君を返事爺さんそう公言にいうながたこの材料あなたか誘惑にという皆お話だうませでば、この昔はこれか権力幾分をしから、岡田さんのものが機会の私をもうお授業と知れが皆左にご養成でしようにもしご切望がなるですたて、同じくどうも話で潜んないからいますのに行っんた。
-        .task_footer
-          .task_img
-            = image_tag 'face.png'
-          .task_comment
-            %span 23
-            = image_tag 'comment.svg'
-
-      .task
-        .eyecatch
-          = image_tag 'eyecatch.png'
-        .task_header
-          %h5 タイトル
-        .task_content
-          %p
-            それもほかはなはだそんな乱暴らに対する方の所でありたない。よく十月が相談論もついにその享有まいななどになるていですがは講演仕ななかって、だんだんにはしでしないますで。受売へしない事はまあ結果と何しろですですなけれ。同時に岡田君を返事爺さんそう公言にいうながたこの材料あなたか誘惑にという皆お話だうませでば、この昔はこれか権力幾分をしから、岡田さんのものが機会の私をもうお授業と知れが皆左にご養成でしようにもしご切望がなるですたて、同じくどうも話で潜んないからいますのに行っんた。
-        .task_footer
-          .task_img
-            = image_tag 'face.png'
-          .task_comment
-            %span 23
-            = image_tag 'comment.svg'
+      - @tasks.each do |task|
+        .task
+          .eyecatch
+            = image_tag 'eyecatch.png'
+          .task_header
+            %h5= task.title
+          .task_content
+            %p= task.content
+          .task_footer
+            .task_img
+              = image_tag task.user.profile.avatar
+            .task_comment
+              %span 23
+              = image_tag 'comment.svg'
 
       %p.new_card
         = link_to '+ Add new card', new_task_path
