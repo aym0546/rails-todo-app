@@ -27,7 +27,8 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = current_user.task.find(params[:id])
+    @task = current_user.tasks.find(params[:id])
+    @board = @task.board
   end
 
   def update

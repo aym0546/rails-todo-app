@@ -4,19 +4,20 @@
       %h2= @board.title
     .card_body
       - @tasks.each do |task|
-        .task
-          .eyecatch
-            = image_tag 'eyecatch.png'
-          .task_header
-            %h5= task.title
-          .task_content
-            %p= task.content
-          .task_footer
-            .task_img
-              = image_tag task.user.profile.avatar
-            .task_comment
-              %span 23
-              = image_tag 'comment.svg'
+        = link_to task_path(task) do
+          .task
+            .eyecatch
+              = image_tag 'eyecatch.png'
+            .task_header
+              %h5= task.title
+            .task_content
+              %p= task.content
+            .task_footer
+              .task_img
+                = image_tag task.user.profile.avatar
+              .task_comment
+                %span 23
+                = image_tag 'comment.svg'
 
       %p.new_card
         = link_to '+ Add new card', new_board_task_path(@board)

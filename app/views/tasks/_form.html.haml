@@ -1,6 +1,6 @@
 .container
   .card
-    = form_with(model: task, url: board_tasks_path(params[:board_id]), local: true) do |f|
+    = form_with(model: [@board, task], local: true) do |f|
       .card_body
         %h2 New Card
         %ul
