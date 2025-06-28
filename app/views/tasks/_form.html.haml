@@ -1,0 +1,19 @@
+.container
+  .card
+    = form_with(model: task, url: board_tasks_path(params[:board_id]), local: true) do |f|
+      .card_body
+        %h2 New Card
+        %ul
+          - task.errors.full_messages.each do |message|
+            %li= message
+        .field
+          = f.label :title, 'Name'
+          = f.text_field :title, class: 'text'
+        .field
+          = f.label :content, 'Description'
+          = f.text_area :content, class: 'text'
+        .field
+          = f.label :deadline, 'Deadline'
+          = f.datetime_local_field :deadline, class: 'text'
+      .card_footer
+        = f.submit 'Submit', class: 'btn-primary full-width-btn'

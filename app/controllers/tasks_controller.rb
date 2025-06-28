@@ -7,13 +7,16 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = current_user.tasks.build
+    @board = Board.find(params[:board_id])
+    @task = @board.tasks.build
   end
 
   def create
+    @board = Board.find(params[:board_id])
     @task = current_user.tasks.build(task_params)
+    @task.board = @board
     if @task.save
-      redirect_to tasks_path(@task), notice: 'The post was successful!!'
+      redirect_to task_path(@task), notice: 'The post was successful!!'
     else
       flash.now[:error] = 'Post failed'
       render :new, status: :unprocessable_entity
@@ -47,7 +50,7 @@ class TasksController < ApplicationController
 
   private
   def task_params
-    params.require(:task).permit(:title, :content, :deadline)
+    params.require(:task).permit(:title, :content, :deadline, :board_id)
   end
 
   def set_task
