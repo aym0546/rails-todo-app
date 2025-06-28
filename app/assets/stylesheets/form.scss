@@ -1,0 +1,29 @@
+input,
+select {
+  &.text {
+    width: 362px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #f4f4f4;
+    margin-bottom: 40px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+}
+
+label {
+  font-size: 18px;
+}
+
+textarea {
+  width: 362px;
+  height: 203px;
+  border-radius: 10px;
+  border: none;
+  margin: 15px 0px;
+  padding: 10px;
+  resize: vertical;
+  border: none;
+  background-color: #f4f4f4;
+}

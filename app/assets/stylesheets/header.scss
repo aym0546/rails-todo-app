@@ -1,0 +1,41 @@
+@use 'variables';
+
+$avatar-size: 40px;
+$header-padding-y: 16px;
+$back-icon-size: 16px;
+
+.header {
+  width: 400px;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  padding: 1.3rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+
+  &_text {
+    font-style: 18px;
+  }
+
+  &_loginBtn {
+    background-color: #ccc;
+    height: $avatar-size;
+    width: 60px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_avatar {
+    width: $avatar-size;
+    height: $avatar-size;
+    border-radius: 100%;
+  }
+}

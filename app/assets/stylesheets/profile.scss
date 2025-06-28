@@ -1,0 +1,53 @@
+@use 'variables';
+
+$image_size: 56px;
+
+.profile {
+  margin-bottom: 32px;
+  display: flex;
+
+  &_image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img {
+      width: $image_size;
+      height: $image_size;
+    }
+  }
+
+  &_info {
+    margin-left: 16px;
+  }
+
+  &_button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 10px;
+    border: none;
+    padding: 0px 12px;
+    background-color: #ccc;
+
+    a {
+      color: white;
+    }
+  }
+
+  &_name {
+    display: flex;
+    margin-bottom: 8px;
+  }
+
+  &_displayName {
+    font-size: 18px;
+    font-weight: 800;
+    margin-right: 8px;
+  }
+
+  &_intro {
+    font-size: 12px;
+  }
+}

@@ -1,7 +1,7 @@
 .container
   .card
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .card-body
+      .card_body
         %h2 Sign in
         .field
           = f.label :email, 'Email'
@@ -18,5 +18,5 @@
           .links
             = render "devise/shared/links"
             = render "devise/shared/error_messages", resource: resource
-      .card-footer
+      .card_footer
         = f.submit "Submit", class: 'btn-primary full-width-btn'

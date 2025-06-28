@@ -1,7 +1,7 @@
 .container
   .card
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { novalidate: true, data: { turbo: false } }) do |f|
-      .card-body
+      .card_body
         %h2 Sign up
         .field
           = f.label :email, 'Email'
