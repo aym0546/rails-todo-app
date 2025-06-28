@@ -6,4 +6,22 @@ class User < ApplicationRecord
 
   has_many :boards, dependent: :destroy
   has_one :profile, dependent: :destroy
+
+  delegate :nickname, to: :profile, allow_nil: true
+
+  def prepare_profile
+    profile || build_profile
+  end
+
+  def display_name
+    profile&.nickname || self.email.split('@').first
+  end
+
+  def avatar_image
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'face.png'
+    end
+  end
 end

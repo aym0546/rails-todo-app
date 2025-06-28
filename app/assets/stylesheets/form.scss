@@ -27,3 +27,13 @@ textarea {
   border: none;
   background-color: #f4f4f4;
 }
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.file {
+  margin-top: 15px;
+}

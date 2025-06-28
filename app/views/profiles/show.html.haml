@@ -1,12 +1,10 @@
 .card
   .profile
     .profile_image
-      = image_tag 'face.png'
+      = image_tag current_user.avatar_image
     .profile_info
       .profile_name
         .profile_displayName
-          名前
+          = current_user.display_name
         .profile_button
           = link_to 'Edit', edit_profile_path
-      .profile_intro
-        自己紹介
