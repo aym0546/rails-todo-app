@@ -1,0 +1,14 @@
+.board_card
+  .board_card_top
+    = link_to board_path(board), class: 'board_card_link' do
+      %h5= board.title
+    - if user_signed_in? && current_user == board.user
+      .dropdown
+        = image_tag 'dot.png', class: 'dropbtn'
+        .dropdown_content
+          = link_to 'Edit', edit_board_path(board)
+          = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+  .board_card_content
+    %p= board.description
+  .board_card_img
+    = image_tag 'face.png'
