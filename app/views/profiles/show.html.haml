@@ -1,12 +1,12 @@
 .card
-  .profilePage_user
-    .profilePage_user_image
+  .profile
+    .profile_image
       = image_tag 'face.png'
-    .profilePage_user_basicInfo
-      .profilePage_user_name
-        .profilePage_user_displayName
+    .profile_info
+      .profile_name
+        .profile_displayName
           名前
-        .profilePage_user_actionButton
+        .profile_button
           = link_to 'Edit', edit_profile_path
-      .profilePage_user_introduction
+      .profile_intro
         自己紹介

@@ -1,0 +1,76 @@
+@use 'reset';
+@use 'header';
+@use 'variables';
+@use 'card';
+@use 'board';
+@use 'buttons';
+@use 'form';
+@use 'flash';
+@use 'common';
+@use 'profile';
+
+html {
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: 'Avenir', sans-serif;
+  font-weight: 400;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  background-color: variables.$base-bg-color;
+  font-size: 1em;
+  color: variables.$text-base-color;
+}
+
+a {
+  text-decoration: none;
+  color: variables.$text-base-color;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 26px;
+  line-height: 100%;
+  letter-spacing: 0px;
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 100%;
+}
+
+.error_box {
+  background-color: #ffecec;
+  border: none;
+  color: #a94442;
+  padding: 1.5rem 1.3rem 1rem;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+
+  h2 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style: disc inside;
+
+    li {
+      margin: 0.25rem 0;
+      line-height: 1.2rem;
+    }
+  }
+}
