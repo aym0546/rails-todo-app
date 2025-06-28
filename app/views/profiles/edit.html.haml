@@ -1,0 +1,16 @@
+.container
+  .card
+    = form_with(model: @profile, url: profile_path, method: :patch, data: { turbo: false }) do |f|
+      .card_body
+        %h2 Profile
+        %ul
+          - @profile.errors.full_messages.each do |message|
+            %li= message
+        .field
+          = f.label :nickname, 'Name'
+          = f.text_field :nickname, class: 'text'
+        .field
+          = f.label :avatar, 'Avatar'
+          = f.file_field :avatar, class: 'file'
+      .card_footer
+        = f.submit 'Submit', class: 'btn-primary full-width-btn'
