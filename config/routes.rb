@@ -20,7 +20,9 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
-  resources :tasks
+  resources :tasks do
+    resources :comments, only: [:new, :create]
+  end
 
   resource :profile, only: [:show, :edit, :update]
 

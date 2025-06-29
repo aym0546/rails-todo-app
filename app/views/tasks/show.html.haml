@@ -17,15 +17,12 @@
         %p= @task.content
       .task_detail_comment
         %h3 Comment
-      .task_detail_comments
-        .task_detail_comments_img
-          = image_tag 'face.png'
-        .task_detail_comments_content
-          %p Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc
-      .task_detail_comments
-        .task_detail_comments_img
-          = image_tag 'face2.png'
-        .task_detail_comments_content
-          %p Successful businesses know the importance of building and maintaining good working. Successful businesses know the importanc
+      - @comments.each do |comment|
+        .task_detail_comments
+          .task_detail_comments_img
+            = image_tag comment.user.profile.avatar
+          .task_detail_comments_content
+            %p= comment.content
 
-    %p.new_comment + Add new comment
+    %p.new_comment
+      = link_to '+ Add new comment', new_task_comment_path(@task)
