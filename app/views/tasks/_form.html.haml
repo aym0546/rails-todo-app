@@ -3,14 +3,15 @@
     = form_with(model: [@board, task], local: true) do |f|
       .card_body
         %h2 New Card
-        %ul
-          - task.errors.full_messages.each do |message|
-            %li= message
+        - if task.errors.any?
+          %ul.error
+            - task.errors.full_messages.each do |message|
+              %li= message
         .field
           = f.label :eyecatch, 'Eyecatch'
           = f.file_field :eyecatch, class: 'file'
         .field
-          = f.label :title, 'Name'
+          = f.label :title, 'Title'
           = f.text_field :title, class: 'text'
         .field
           = f.label :content, 'Description'

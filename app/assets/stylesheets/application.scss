@@ -58,7 +58,7 @@ h2 {
   border: none;
   color: #a94442;
   padding: 1.5rem 1.3rem 1rem;
-  margin-top: 1.5rem;
+  margin: 1.5rem 0;
   border-radius: 5px;
 
   h2 {
@@ -72,6 +72,23 @@ h2 {
     li {
       margin: 0.25rem 0;
       line-height: 1.2rem;
+      font-size: 14px;
     }
+  }
+}
+
+ul.error {
+  background-color: #fff4f4;
+  color: #a94442;
+  padding: 0.8rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  list-style: none;
+
+  li {
+    position: relative;
+    margin: 0.4rem 0;
+    line-height: 1.4;
+    font-size: 14px;
   }
 }

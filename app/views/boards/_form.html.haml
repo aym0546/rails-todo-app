@@ -3,9 +3,10 @@
     = form_with(model: board, local: true) do |f|
       .card_body
         %h2 New Board
-        %ul
-          - board.errors.full_messages.each do |message|
-            %li= message
+        - if board.errors.any?
+          %ul.error
+            - board.errors.full_messages.each do |message|
+              %li= message
         .field
           = f.label :title, 'Name'
           = f.text_field :title, class: 'text'
