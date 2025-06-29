@@ -17,7 +17,7 @@
               .task_img
                 = image_tag task.user.profile.avatar
               .task_comment
-                %span 23
+                %span= task.comments.count
                 = image_tag 'comment.svg'
 
       %p.new_card
