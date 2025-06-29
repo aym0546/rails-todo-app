@@ -1,0 +1,13 @@
+.container
+  .card
+    = form_with(model: [@task, @comment], local: true) do |f|
+      .card_body
+        %h2 New Comment
+        %ul
+          - comment.errors.full_messages.each do |message|
+            %li= message
+        .field
+          = f.label :content
+          = f.text_area :content, class: 'text'
+      .card_footer
+        = f.submit 'Submit', class: 'btn-primary full-width-btn'
