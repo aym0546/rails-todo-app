@@ -34,7 +34,7 @@ class TasksController < ApplicationController
   def update
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
-      redirect_to root_path, notice: 'updated!'
+      redirect_to task_path(@task), notice: 'updated!'
     else
       flash.now[:error] = 'Update failed'
       render :edit, status: :unprocessable_entity
@@ -43,8 +43,9 @@ class TasksController < ApplicationController
 
   def destroy
     task = current_user.tasks.find(params[:id])
+    board = task.board
     task.destroy!
-    redirect_to root_path, status: :see_other, notice: 'Deleted!'
+    redirect_to board_path(board), status: :see_other, notice: 'Deleted!'
   end
 
 
