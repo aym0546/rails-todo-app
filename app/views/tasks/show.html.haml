@@ -10,8 +10,9 @@
               = link_to 'Edit', edit_task_path(@task)
               = link_to 'Delete', task_path(@task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
 
-      .eyecatch
-        = image_tag 'eyecatch.png'
+      - if @task.eyecatch.attached?
+        .eyecatch
+          = image_tag @task.eyecatch
       .task_detail_content
         %p= @task.content
       .task_detail_comment
