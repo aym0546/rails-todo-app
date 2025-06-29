@@ -21,7 +21,7 @@ textarea {
   height: 203px;
   border-radius: 10px;
   border: none;
-  margin: 15px 0px;
+  margin: 15px 0px 40px;
   padding: 10px;
   resize: vertical;
   border: none;
@@ -32,6 +32,12 @@ textarea {
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.checkbox-field {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }
 
 .file {
