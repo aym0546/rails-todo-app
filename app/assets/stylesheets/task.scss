@@ -52,7 +52,12 @@
     display: flex;
     align-items: center;
     gap: 3px;
-    opacity: 0.25;
+    color: #ccc;
+
+    img {
+      filter: invert(94%) sepia(11%) saturate(20%) hue-rotate(314deg)
+        brightness(86%) contrast(91%);
+    }
   }
 
   &_actions {
