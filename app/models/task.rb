@@ -13,7 +13,7 @@ class Task < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   def avatar_img
-    user.profile.avatar
+    user.avatar_image
   end
 
   private

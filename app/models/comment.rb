@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
   validates :content, length: { minimum: 1, maximum: 256 }
 
   def avatar_img
-    user.profile.avatar
+    user.avatar_image
   end
 
 end
