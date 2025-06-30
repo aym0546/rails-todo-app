@@ -51,6 +51,13 @@ h2 {
   width: 100%;
 }
 
+.guest_login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
 .error_box {
   background-color: #ffecec;
   border: none;
