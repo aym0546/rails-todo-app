@@ -6,15 +6,15 @@
 
   .avatar {
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: variables.$avatar-size;
+    height: variables.$avatar-size;
     border-radius: 100%;
     margin: 0;
   }
 
   &_content {
     display: none;
-    font-size: 12px;
+    font-size: variables.$font-sm;
     border-radius: 10px;
     right: 0;
     padding: 5px;
@@ -41,4 +41,63 @@
       display: block;
     }
   }
+}
+
+.eyecatch {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin-bottom: 30px;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+}
+
+.btn-primary {
+  background-color: variables.$primary-color;
+  border: none;
+  text-align: center;
+  color: variables.$text-light-color;
+  width: 362px;
+  height: 40px;
+  border-radius: 4px;
+  font-weight: 800;
+  font-size: variables.$font-xl;
+  line-height: 100%;
+  letter-spacing: 0px;
+}
+
+.btn-secondary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: variables.$font-sm;
+  border-radius: 10px;
+  border: none;
+  padding: 0px 12px;
+  background-color: variables.$gray-light;
+
+  a {
+    color: variables.$text-light-color;
+  }
+}
+
+.btn-login {
+  background-color: variables.$gray-light;
+  height: 40px;
+  width: 60px;
+  border-radius: 3rem;
+  font-size: variables.$font-sm;
+  color: variables.$text-light-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

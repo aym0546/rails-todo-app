@@ -1,7 +1,7 @@
 .container
-  .card
+  .panel
     %h2 All Boards
-    .card_body
+    .panel_body
       - @boards.each do |board|
         = render 'commons/board', board: board
       %p.new_board
