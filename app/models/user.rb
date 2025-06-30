@@ -26,4 +26,13 @@ class User < ApplicationRecord
       'default.svg'
     end
   end
+
+  GUEST_EMAIL = 'guest@example.com'
+
+  def self.guest
+    find_or_create_by!(email: GUEST_EMAIL) do |user|
+      user.password = 'guest_password'
+      user.password_confirmation = 'guest_password'
+    end
+  end
 end
