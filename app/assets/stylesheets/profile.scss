@@ -21,33 +21,18 @@ $image_size: 56px;
     margin-left: 16px;
   }
 
-  &_button {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 12px;
-    border-radius: 10px;
-    border: none;
-    padding: 0px 12px;
-    background-color: #ccc;
-
-    a {
-      color: white;
-    }
-  }
-
   &_name {
     display: flex;
     margin-bottom: 8px;
   }
 
   &_displayName {
-    font-size: 18px;
+    font-size: variables.$font-xl;
     font-weight: 800;
     margin-right: 8px;
   }
 
   &_intro {
-    font-size: 12px;
+    font-size: variables.$font-sm;
   }
 }

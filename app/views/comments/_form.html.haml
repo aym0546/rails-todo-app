@@ -1,7 +1,7 @@
 .container
-  .card
+  .panel
     = form_with(model: [@task, @comment], data: { turbo: false }) do |f|
-      .card_body
+      .panel_body
         %h2 New Comment
         - if @comment.errors.any?
           %ul.error
@@ -10,5 +10,5 @@
         .field
           = f.label :content
           = f.text_area :content, class: 'text'
-      .card_footer
+      .panel_footer
         = f.submit 'Submit', class: 'btn-primary full-width-btn'

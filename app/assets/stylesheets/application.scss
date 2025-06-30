@@ -2,9 +2,7 @@
 @use 'header';
 @use 'variables';
 @use 'card';
-@use 'board';
-@use 'task';
-@use 'buttons';
+@use 'panel';
 @use 'form';
 @use 'flash';
 @use 'common';
@@ -20,6 +18,7 @@ html {
   height: 100%;
   font-family: 'Avenir', sans-serif;
   font-weight: 400;
+  font-size: 14px;
 }
 
 *,
@@ -32,7 +31,6 @@ html {
 body {
   height: 100%;
   background-color: variables.$base-bg-color;
-  font-size: 1em;
   color: variables.$text-base-color;
 }
 
@@ -72,7 +70,6 @@ h2 {
     li {
       margin: 0.25rem 0;
       line-height: 1.2rem;
-      font-size: 14px;
     }
   }
 }
@@ -89,6 +86,5 @@ ul.error {
     position: relative;
     margin: 0.4rem 0;
     line-height: 1.4;
-    font-size: 14px;
   }
 }

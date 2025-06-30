@@ -12,6 +12,10 @@ class Task < ApplicationRecord
   has_one_attached :eyecatch
   has_many :comments, dependent: :destroy
 
+  def avatar_img
+    user.profile.avatar
+  end
+
   private
 
   def deadline_cannot_be_in_the_past

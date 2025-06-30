@@ -1,34 +1,224 @@
 @use 'variables';
 
-.card {
-  width: 400px;
+// ==============================
+// 共通mixin
+// ==============================
+
+@mixin base-card($width: 360px, $height: 160px, $padding: 30px 20px) {
+  width: $width;
+  height: $height;
+  border-radius: 10px;
+  background-color: variables.$bg-content;
+  padding: $padding;
+
+  border: none;
   display: flex;
   flex-direction: column;
-  padding: 1.3rem;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin: 0 auto;
+  justify-content: space-between;
+  position: relative;
+}
 
-  &_body {
-    flex: 1 1 auto;
-    min-height: 760px;
+@mixin new-card($height: 160px) {
+  @include base-card(360px, $height, 0);
+  font-size: variables.$font-lg;
+  border: 1px dotted #00000033;
+  background-color: variables.$base-bg-color;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.board {
+  @include base-card;
+  margin-bottom: 30px;
+
+  &_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h5 {
+      font-size: variables.$font-xl;
+      margin: 0;
+    }
+  }
+
+  &_content {
+    color: variables.$gray-dark;
+  }
+
+  &_img {
+    height: 30px;
+    width: 30px;
+    padding-top: 12px;
+    padding-bottom: 10px;
+
+    img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+
+  &_actions {
+    width: 24px;
+    height: 6px;
+    right: 20px;
+    position: absolute;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.new_board {
+  @include new-card;
+}
+
+.task {
+  @include base-card;
+
+  height: auto;
+  min-height: 160px;
+  margin-bottom: 25px;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    h5 {
+      font-size: variables.$font-xl;
+      font-weight: 800;
+    }
+  }
+
+  &_content {
+    line-height: 1.1rem;
+    color: variables.$gray-dark;
+    margin-bottom: 20px;
   }
 
   &_footer {
-    margin-top: auto;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    position: center;
+    align-items: center;
   }
 
-  .full_width_btn {
-    width: 100%;
-    padding: 0.75rem;
-  }
+  &_img {
+    height: 30px;
+    width: 30px;
 
-  .links {
-    margin-top: 20px;
-
-    a:hover {
-      color: #aaa;
+    img {
+      width: 100%;
+      border-radius: 100%;
     }
   }
+
+  &_comment {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    color: variables.$gray-light;
+
+    img {
+      filter: invert(94%) sepia(11%) saturate(20%) hue-rotate(314deg)
+        brightness(86%) contrast(91%);
+    }
+  }
+
+  &_actions {
+    width: 24px;
+    height: 6px;
+    right: 20px;
+    position: absolute;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.new_card {
+  @include new-card;
+}
+
+.task_detail {
+  border: none;
+  width: 360px;
+  min-height: 160px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: variables.$font-xxl;
+      font-weight: 800;
+      margin-bottom: 0;
+    }
+  }
+
+  &_content {
+    border-radius: 0.5rem;
+    background-color: variables.$bg-content;
+    line-height: 1.2rem;
+    margin-bottom: 20px;
+    padding: 20px 15px;
+  }
+
+  &_footer {
+    display: flex;
+    justify-content: space-between;
+    position: center;
+    align-items: center;
+  }
+
+  &_comment {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    h3 {
+      font-size: variables.$font-xxl;
+      margin: 20px 0 30px;
+    }
+  }
+
+  &_comments {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    &_img {
+      width: 40px;
+      height: 40px;
+      margin-right: 15px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        border-radius: 100%;
+      }
+    }
+
+    &_content {
+      line-height: 1.2rem;
+    }
+  }
+}
+
+.new_comment {
+  @include new-card(57px);
 }

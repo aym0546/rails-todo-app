@@ -1,5 +1,5 @@
-.board_card
-  .board_card_top
+.board
+  .board_top
     = link_to board_path(board), class: 'board_card_link' do
       %h5= board.title
     - if user_signed_in? && current_user == board.user
@@ -8,7 +8,7 @@
         .dropdown_content
           = link_to 'Edit', edit_board_path(board)
           = link_to 'Delete', board_path(board), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-  .board_card_content
+  .board_content
     %p= board.description
-  .board_card_img
-    = image_tag board.user.avatar_image
+  .board_img
+    = image_tag board.avatar_img
