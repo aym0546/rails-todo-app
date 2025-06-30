@@ -19,3 +19,5 @@
             = render "devise/shared/error_messages", resource: resource
       .panel_footer
         = f.submit "Submit", class: 'btn-primary full-width-btn'
+    .guest_login
+      = button_to 'Guest login', guest_sign_in_path, method: :post, data: { turbo: false }, class: 'btn-guest'

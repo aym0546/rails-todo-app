@@ -101,3 +101,21 @@
   align-items: center;
   justify-content: center;
 }
+
+.btn-guest {
+  width: 362px;
+  height: 40px;
+  letter-spacing: 0px;
+  background-color: variables.$gray-light;
+  color: variables.$text-light-color;
+  font-weight: 800;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: variables.$gray-dark;
+  }
+}
