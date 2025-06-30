@@ -1,14 +1,15 @@
-.board
-  .board_top
-    = link_to task_path(task), class: 'board_card_link' do
+= link_to task_path(task) do
+  .task
+    - if task.eyecatch.attached?
+      .eyecatch
+        = image_tag task.eyecatch
+    .task_header
       %h5= task.title
-    - if user_signed_in? && current_user == card.user
-      .dropdown
-        = image_tag 'dot.png', class: 'dropbtn'
-        .dropdown_content
-          = link_to 'Edit', edit_card_path(card)
-          = link_to 'Delete', card_path(card), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
-  .board_content
-    %p= card.description
-  .board_img
-    = image_tag card.user.avatar_image
+    .task_content
+      %p= task.content
+    .task_footer
+      .task_img
+        = image_tag task.avatar_img
+      .task_comment
+        %span= task.comments.count
+        = image_tag 'comment.svg'

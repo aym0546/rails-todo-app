@@ -5,4 +5,8 @@ class Comment < ApplicationRecord
   validates :content, presence: true
   validates :content, length: { minimum: 1, maximum: 256 }
 
+  def avatar_img
+    user.profile.avatar
+  end
+
 end

@@ -5,4 +5,8 @@ class Board < ApplicationRecord
   validates :description, length: { maximum: 250 }
   belongs_to :user
   has_many :tasks
+
+  def avatar_img
+    user.avatar_image
+  end
 end

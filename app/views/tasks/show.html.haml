@@ -18,11 +18,7 @@
       .task_detail_comment
         %h3 Comment
       - @comments.each do |comment|
-        .task_detail_comments
-          .task_detail_comments_img
-            = image_tag comment.user.profile.avatar
-          .task_detail_comments_content
-            %p= comment.content
+        = render 'commons/comment', comment: comment
 
     %p.new_comment
       = link_to '+ Add new comment', new_task_comment_path(@task)
