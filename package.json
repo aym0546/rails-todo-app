@@ -1,12 +1,12 @@
 {
   "name": "app",
   "private": true,
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "start": "esbuild app/javascript/application.js --bundle --outdir=app/assets/builds --watch",
-    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "heroku-postbuild": "yarn build && yarn build:css"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
