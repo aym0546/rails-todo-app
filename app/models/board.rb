@@ -4,7 +4,7 @@ class Board < ApplicationRecord
   validates :title, uniqueness: true
   validates :description, length: { maximum: 250 }
   belongs_to :user
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 
   def avatar_img
     user.avatar_image
