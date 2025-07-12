@@ -127,12 +127,12 @@ erDiagram
 
 本アプリは Heroku にデプロイ済みです。
 
-[🔗 https://aym-todo-app-0a4d604a12d4.herokuapp.com/](https://aym-todo-app-0a4d604a12d4.herokuapp.com/)
+[🔗 aym-todo-app](https://aym-todo-app-be4a924a49e3.herokuapp.com/)
 
 ##### アプリの使い方
-1. 上記のURLをクリックしてアプリを開きます。
+1. 上記のリンクをクリックしてアプリを開きます。
 2. 画面右上の “Log in” ボタンをクリックします。
-3. ログイン画面の一番下にある “Guest login” ボタンをクリックします。
+3. ログイン画面の最下部にある “Guest login” ボタンをクリックします。
 4. ログイン後、各機能をお試しいただけます。
 
 ※ゲストログインのデータは共通の仮アカウントで利用されるため、操作内容は他のユーザーと共有されます。
